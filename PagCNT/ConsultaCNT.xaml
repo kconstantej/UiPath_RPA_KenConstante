@@ -5,7 +5,7 @@
     <x:Property Name="in_Apellidos" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1102,2094</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1102,1853</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,7 +117,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConsultaCNT" sap:VirtualizedContainerService.HintSize="1112,2029" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ConsultaCNT" sap:VirtualizedContainerService.HintSize="1112,1788" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ImagenCaptcha" />
     </Sequence.Variables>
@@ -138,21 +138,21 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="1050,1737" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="1050,1496" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do Ingreso CNT" sap:VirtualizedContainerService.HintSize="1016,1520" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do Ingreso CNT" sap:VirtualizedContainerService.HintSize="1016,1279" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1405" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1164" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears Existe criterios busqueda" sap:VirtualizedContainerService.HintSize="450,1188" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears Existe criterios busqueda" sap:VirtualizedContainerService.HintSize="450,947" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Res" />
                   </Sequence.Variables>
@@ -241,27 +241,13 @@
                       </InArgument>
                     </uix:NSetText.Text>
                   </uix:NSetText>
-                  <uix:NGetText DisplayName="Get Text 'Selecciona la'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
-                    <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvTextArea="244, 529, 49, 13" CvType="AnyWordGroup" DesignTimeRectangle="246, 528, 47, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='captchaText' /&gt;" Guid="1cece9ff-6163-432a-9768-13dcb0445b4d" InformativeScreenshot="88121101bfee3179d2dce3e50b76cad7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                        <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CvTextArea="243, 488, 453, 14" CvTextArgument="Selecciona la imagen que se indica en el texto en rojo a continuacion:" CvType="Text" DesignTimeRectangle="246, 486, 450, 19" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='FONT' class='' aaname='Selecciona la imagen que se indica en el texto en rojo a continuación:' check:innerText='Selecciona la imagen que se indica en el texto en rojo a continuación:' /&gt;" SearchSteps="FuzzySelector, CV" />
-                          </scg:List>
-                        </uix:TargetAnchorable.Anchors>
-                      </uix:TargetAnchorable>
-                    </uix:NGetText.Target>
-                    <uix:NGetText.TextString>
-                      <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">ImagenCaptcha</CSharpReference>
-                      </OutArgument>
-                    </uix:NGetText.TextString>
-                  </uix:NGetText>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" DesignTimeRectangle="288, 566, 32, 32" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='IMG' src='../../lib/simpleCaptcha0.2/captchaImages/58.png' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' src='../../lib/simpleCaptcha0.2/captchaImages/58.png' type='' class='captchaImage' aaname='d919171d7d22027a548ec534cc30d2f799e7e362' /&gt;" Guid="a3b5fc32-230a-4727-9c25-d0ab05058d95" InformativeScreenshot="738de71b1329bd7192730d86767ad907.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PagCNT\\ResolucionCapcha.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PagCNT\\ResolucionCapcha.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_UrlCNT">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_UrlCNT</CSharpValue>
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box In" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_1">
                     <ui:MessageBox.Text>
                       <InArgument x:TypeArguments="x:Object">
