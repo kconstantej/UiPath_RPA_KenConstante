@@ -128,7 +128,7 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">
-                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28" xml:space="preserve">new Dictionary&lt;string, string&gt; { 
+                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29" xml:space="preserve">new Dictionary&lt;string, string&gt; { 
 	{ "casa", "01.png" }, 
 	{ "pilas", "49.png" },
 	{ "dados", "23.png" }, 
@@ -146,6 +146,7 @@
 	{ "foco", "21.png" }, 
 	{ "celular", "49.png" },
 	{ "candado", "77.png" },
+	{"nota musical", "40.png" },
 }</CSharpValue>
               </InArgument>
             </ui:AssignOperation.Value>
@@ -206,7 +207,7 @@
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="317, 563, 41, 40" CvType="Icon" DesignTimeRectangle="320, 566, 36, 36" DesignTimeScaleFactor="1" ElementType="Icon" Guid="2968f64f-9f78-4355-b807-267a4cd7ac5b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVFhH1ZVrSFNhHMb7GlgRRQQSJUTgpz4IQdlF+hRdpDJJE02FhCIqSzPnyMRUCo2RoVRaTlOjJMPRIi+QTjeZG06FRupMbIpMGaEW6wJP/l82p2fH5N3O6PjAj/ds5/yf8+NctjWQeVaPYMTjCFnhyeoT/N/xS9DhtOPFu7soepaE/KdxAUEd1EWdYuEWNFmbkVEWiUpTEhpsV/HmS3pAUAd1ZZRHwvTpg/ss3nALFtenQtUaiyf6VJR3pKCsPTkgqIO6qPN+XbL7LN5wC6YW7UJp2zk8bPXlnuYUstUHlyXv1RHROYI6Uwp2us/iDbdgYv4OlLyPFeVCcTiaDdVoNzf40GasR7oqSnTOA3ULwy2YkLcNRW+jRaF9/wp7KUTmPIjNcwvG54ayWyUG7XP9/O4+cml+//mF3PIY5L0WnyVoXhhuwbPKrVBUH/JBWRuFm1V7kFgQiqRCX+j7S6XhuP3ysOg8Qd3CcAvGKrYgo2KvKFlV+5BTux/KugM+5MyTXROJzErxWYK6heEWPJ21CZdLdwcF6haGW/Bk5kaklYQHBeoWhlsw+sZ6nC8MCwrULQy34PH0EMTfCQ0K1C0Mt2CCMgwx2ZtxRiEt1Bmv2O4+izfcgqq6izhxfd3887JBUqiTuoXhFnQ4v6K4Jg1xt0Jx7FoIjl5ZGxDUQV3USd3CcAtS5n58g+XzR+h6G5f83z56ngtth3qBmsYHSz57UFXkLMxQB3VRp1j8ElwunZ2d6O/vZzidTvT19bF1MXSMXq93T6wcSQVnZmZgsVigVqsxNzfHtqenpxfo7u5mci6Xyz2xciQX1Gq1mJycxOzsLHp7e+FwOBg6nY7rynkiqSDdvrGxMXb1SNJsNrOV0Gg0XFfOE8kFSWpkZAQTExNsm1aipaXFfRRfJBe02WyYmpqC3W5HT08PWwnZCBqNRgwODrJbTdu0ErK6gvTMjY6OsreWVkI2giRltVrZc2gwGNhKyEZweHgY4+PjbO3q6mIrIRtBkhoYGMDQ0BDbptVkMrF9/kRyQc8LQmL0w0xvclNTE/sR9yeSCwqhfxZ/5SiSCpIIvcWLCUSOsqKgXPBk9QjKNTIXBP4C7OMOoy56xfYAAAAASUVORK5CYII=" InformativeScreenshot="863a8ca2aaf22f3d77d9297eeb087279.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CvTextArea="244, 488, 452, 14" CvTextArgument="Selecciona la imagen que se indica en el texto en rojo a continuacion:" CvType="Text" DesignTimeRectangle="246, 486, 450, 19" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='FONT' class='' aaname='Selecciona la imagen que se indica en el texto en rojo a continuación:' check:innerText='Selecciona la imagen que se indica en el texto en rojo a continuación:' /&gt;" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
