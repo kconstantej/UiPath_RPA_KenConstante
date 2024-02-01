@@ -2,9 +2,10 @@
   <x:Members>
     <x:Property Name="in_UrlCNT" Type="InArgument(x:String)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="out_ResultadoPasoCaptcha" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>764,2394</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>764,2815</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +106,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ResolucionCapcha" sap:VirtualizedContainerService.HintSize="744,2329" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ResolucionCapcha" sap:VirtualizedContainerService.HintSize="744,2750" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ImagenCaptcha" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="DiccionarioImagenes" />
@@ -127,7 +128,7 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">
-                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10" xml:space="preserve">new Dictionary&lt;string, string&gt; { 
+                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28" xml:space="preserve">new Dictionary&lt;string, string&gt; { 
 	{ "casa", "01.png" }, 
 	{ "pilas", "49.png" },
 	{ "dados", "23.png" }, 
@@ -144,6 +145,7 @@
 	{ "bandera", "06.png" },
 	{ "foco", "21.png" }, 
 	{ "celular", "49.png" },
+	{ "candado", "77.png" },
 }</CSharpValue>
               </InArgument>
             </ui:AssignOperation.Value>
@@ -161,13 +163,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="682,1729" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="682,1890" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do CNT" sap:VirtualizedContainerService.HintSize="648,1512" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do CNT" sap:VirtualizedContainerService.HintSize="648,1673" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="Validacion" />
             </Sequence.Variables>
@@ -176,9 +178,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While reintentos captcha" sap:VirtualizedContainerService.HintSize="586,1397" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While reintentos captcha" sap:VirtualizedContainerService.HintSize="586,1558" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1261" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1422" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,7 +188,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <uix:NGetText DisplayName="Get Text 'Selecciona la'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
                     <uix:NGetText.Target>
-                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvTextArea="244, 529, 49, 13" CvType="AnyWordGroup" DesignTimeRectangle="246, 528, 47, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='captchaText' /&gt;" Guid="1cece9ff-6163-432a-9768-13dcb0445b4d" InformativeScreenshot="88121101bfee3179d2dce3e50b76cad7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvTextArea="244, 529, 49, 13" CvType="AnyWordGroup" DesignTimeRectangle="246, 528, 47, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='captchaText' /&gt;" Guid="1cece9ff-6163-432a-9768-13dcb0445b4d" InformativeScreenshot="88121101bfee3179d2dce3e50b76cad7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2">
                         <uix:TargetAnchorable.Anchors>
                           <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target CvTextArea="243, 488, 453, 14" CvTextArgument="Selecciona la imagen que se indica en el texto en rojo a continuacion:" CvType="Text" DesignTimeRectangle="246, 486, 450, 19" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='FONT' class='' aaname='Selecciona la imagen que se indica en el texto en rojo a continuación:' check:innerText='Selecciona la imagen que se indica en el texto en rojo a continuación:' /&gt;" SearchSteps="FuzzySelector, CV" />
@@ -200,40 +202,26 @@
                       </OutArgument>
                     </uix:NGetText.TextString>
                   </uix:NGetText>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="510,193" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="390, 564, 35, 35" CvType="Icon" DesignTimeRectangle="392, 566, 32, 32" DesignTimeScaleFactor="1" ElementType="Icon" Guid="a8c93844-ef5b-440a-ae7b-3238bb0a91fb" InformativeScreenshot="cce0dfc7f347f01a2d6671364c70f9b0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="317, 563, 41, 40" CvType="Icon" DesignTimeRectangle="320, 566, 36, 36" DesignTimeScaleFactor="1" ElementType="Icon" Guid="2968f64f-9f78-4355-b807-267a4cd7ac5b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVFhH1ZVrSFNhHMb7GlgRRQQSJUTgpz4IQdlF+hRdpDJJE02FhCIqSzPnyMRUCo2RoVRaTlOjJMPRIi+QTjeZG06FRupMbIpMGaEW6wJP/l82p2fH5N3O6PjAj/ds5/yf8+NctjWQeVaPYMTjCFnhyeoT/N/xS9DhtOPFu7soepaE/KdxAUEd1EWdYuEWNFmbkVEWiUpTEhpsV/HmS3pAUAd1ZZRHwvTpg/ss3nALFtenQtUaiyf6VJR3pKCsPTkgqIO6qPN+XbL7LN5wC6YW7UJp2zk8bPXlnuYUstUHlyXv1RHROYI6Uwp2us/iDbdgYv4OlLyPFeVCcTiaDdVoNzf40GasR7oqSnTOA3ULwy2YkLcNRW+jRaF9/wp7KUTmPIjNcwvG54ayWyUG7XP9/O4+cml+//mF3PIY5L0WnyVoXhhuwbPKrVBUH/JBWRuFm1V7kFgQiqRCX+j7S6XhuP3ysOg8Qd3CcAvGKrYgo2KvKFlV+5BTux/KugM+5MyTXROJzErxWYK6heEWPJ21CZdLdwcF6haGW/Bk5kaklYQHBeoWhlsw+sZ6nC8MCwrULQy34PH0EMTfCQ0K1C0Mt2CCMgwx2ZtxRiEt1Bmv2O4+izfcgqq6izhxfd3887JBUqiTuoXhFnQ4v6K4Jg1xt0Jx7FoIjl5ZGxDUQV3USd3CcAtS5n58g+XzR+h6G5f83z56ngtth3qBmsYHSz57UFXkLMxQB3VRp1j8ElwunZ2d6O/vZzidTvT19bF1MXSMXq93T6wcSQVnZmZgsVigVqsxNzfHtqenpxfo7u5mci6Xyz2xciQX1Gq1mJycxOzsLHp7e+FwOBg6nY7rynkiqSDdvrGxMXb1SNJsNrOV0Gg0XFfOE8kFSWpkZAQTExNsm1aipaXFfRRfJBe02WyYmpqC3W5HT08PWwnZCBqNRgwODrJbTdu0ErK6gvTMjY6OsreWVkI2giRltVrZc2gwGNhKyEZweHgY4+PjbO3q6mIrIRtBkhoYGMDQ0BDbptVkMrF9/kRyQc8LQmL0w0xvclNTE/sR9yeSCwqhfxZ/5SiSCpIIvcWLCUSOsqKgXPBk9QjKNTIXBP4C7OMOoy56xfYAAAAASUVORK5CYII=" InformativeScreenshot="863a8ca2aaf22f3d77d9297eeb087279.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="244, 488, 452, 14" CvTextArgument="Selecciona la imagen que se indica en el texto en rojo a continuacion:" CvType="Text" DesignTimeRectangle="246, 486, 450, 19" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='FONT' class='' aaname='Selecciona la imagen que se indica en el texto en rojo a continuación:' check:innerText='Selecciona la imagen que se indica en el texto en rojo a continuación:' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
                         <uix:TargetAnchorable.FullSelectorArgument>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='IMG' class='captchaImage' src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
                           </InArgument>
                         </uix:TargetAnchorable.FullSelectorArgument>
                         <uix:TargetAnchorable.FuzzySelectorArgument>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">"&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='captchaImage' src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
                           </InArgument>
                         </uix:TargetAnchorable.FuzzySelectorArgument>
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
-                    <uix:NClick.VerifyOptions>
-                      <uix:VerifyExecutionOptions DisplayName="Icon 'IMG'" Mode="Appears">
-                        <uix:VerifyExecutionOptions.Retry>
-                          <InArgument x:TypeArguments="x:Boolean" />
-                        </uix:VerifyExecutionOptions.Retry>
-                        <uix:VerifyExecutionOptions.Target>
-                          <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="282, 565, 36, 33" CvType="Icon" DesignTimeRectangle="284, 566, 32, 32" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='IMG' src='../../lib/simpleCaptcha0.2/captchaImages/16.png' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' src='../../lib/simpleCaptcha0.2/captchaImages/16.png' class='captchaImage' aaname='662f381250e83d6777bdecfd2f719570ee1ead41' /&gt;" Guid="51c5610c-ca0c-4b84-a9c3-d8b4b3859fc5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUaSURBVFhH7Zd9TNR1HMf7I1Iz0qmVwnE8HwrcgTwWEAwcNOKhlIlzQZkx3SJQyuRhWbRyUhlG//BQWxur/mrisiUSjCchmzABO0juhEPE6zhaySbIU+9+71+cgvx+d0BtueZ7e++++34+n9fnvd3vfoMHcI/pfiBb+h8F+nMGt8xG/N7xI4abzojmmXesLVfLCjQ1+gcMX36K3vdSce3DaBg/ChbNM+9YY89ytORA5qbv0Z0ZgdHjWzFZHoTxYn+MFmlE88w71tgzIvQuVUsKdHNAJywKw9j7atw4qsbIuz4YLpxv3rE2JrhH6OXMUrToQDO3xtF74jBu5HlhJN8LQ4dVVm0WetjLGc4uVpKB+vv7UVpaiq6urtkbYLT3ErpfjcTwQXdczXLDwGvWzZ7hHHdxhrMWkUk2d0hJMlBFRQWio6MREhKCsrIyTExMwHzuLDp2u+LKXiV0Lzstyn1Cb+cuFww3nxEZZJFJNndISTJQd3c3PD09ER4ejqioKFRVVYmB2nco8fPOjdDuchAWKqAXlupfUkD3ogK9gnXCmXcMwx72XtzuBLMQiAyyyCSbO6Qk+wxVV1cjICAAMTEx8PX1xYWTX6NtdwCu7HeDKVeF6zkeGDwgfH3Z7hjIdMPgm57imXessYe9nOEsGWSRSbacZAONj48jPT0dERERCAoKwlcZSbh6yA9jx9T4rdAbprfv+NfczTB/oJl3xx72coazZJBFJtlykg00OTmJ/Px8+Pv7Y0+oDwz7PTB+1BemI1sW2PiGCiOf+EvWOMNZMsgik2w5yQai9Ho9/Nxd8Pk2d9w84i38lDfDmOu1wNcyPWA+4SdZ4wxnySCLTGuyGoj6obgQ3XtcYT7kiUE+NxI27HWG+WO1ZI3mLBlk2ZLNQLriHBj2uYrvFoPw8EpZn+4EU5HwtUrUaHFWYJBlS7cDGQwGZGdnIzQ0FFlZWaisrEReXh5OxynRn+EMfYZS1j3CT3zoHZVkzWIyyCKTbO7gLu7kbovmBUpKSoJGoxFfXomJiUhISEDLs8J7ZfY9I2ft9o0YzHNfcH95zpkMssgkmzu4izslA1FjY2OoqalBcnKy+N7gO6Mp1gHaVOFlaMUdCY/BkOUsWZtrssgkmzu4izvnasEzND09Lf4SUlJS4OLigpORm9D53OO49Ly822PXo2+fo2TNYjLIIpNs7uCuu2Xzob5cdABtz2zAxfh1sv4pai30aU9I1iwmgyxbshnIePYbnI/dhLZta3FBMD/vdkvYo+jduUGyZjEZ1wWWLVkNNDU1heOFb+GLaC+cf9pe8COSbgxejZ6kNZK1v20vMsgi05pkA3GwpKREfABfeUqN5vB1aA19GC1PrhY/57refxW0cfYL7i3mbIbAIItMa6FkAxmNRvHhCwsLE0Gnsl/AuSgHNG9ducB1PivQGbFKssYZzpJBFplky0k2UF9fH+Lj4xEYGAiVSoXa775F32dFaAheg0bNCjSqH7rt2i12aA+ef8ce9nKGs2SQRSbZcpINpNPpEBcXB29vbzg6OmJoaEi8N9WfRsfrqWgIWY969UrUe9uhRvUgWjV24pl3rLGHvRRnySCLTLLlJBuovLwcPj4+UCqVKCgowMzMnX/+JkZMMNWewi/HDqJ1RyAaIh3RHK0Qz7xjjT0WcZYMssgkW06Sgerq6qBQKMQ/N7Va7eztPxdZZJLNHVKSDZSWloaWlpbZm39PZJK9pED/pe4HsqV7LBDwF3H+qVHSXpWwAAAAAElFTkSuQmCC" InformativeScreenshot="059b9d2a4032ec89fa126dcb3fd7fb15.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
-                            <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CvElementArea="487, 597, 70, 36" CvTextArea="501, 607, 43, 14" CvTextArgument="Enviar" CvType="Button" DesignTimeRectangle="489, 598, 67, 34" ElementType="Button" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' visibleinnertext='Enviar' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='BUTTON' visibleinnertext='Enviar' class='btn btn-primary' aaname='Enviar' check:text='Enviar' /&gt;" SearchSteps="FuzzySelector, CV" />
-                              </scg:List>
-                            </uix:TargetAnchorable.Anchors>
-                          </uix:TargetAnchorable>
-                        </uix:VerifyExecutionOptions.Target>
-                        <uix:VerifyExecutionOptions.Timeout>
-                          <InArgument x:TypeArguments="x:Double" />
-                        </uix:VerifyExecutionOptions.Timeout>
-                      </uix:VerifyExecutionOptions>
-                    </uix:NClick.VerifyOptions>
                   </uix:NClick>
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="510,85" sap2010:WorkflowViewState.IdRef="MessageBox_3">
                     <ui:MessageBox.Text>
@@ -242,6 +230,11 @@
                       </InArgument>
                     </ui:MessageBox.Text>
                   </ui:MessageBox>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enviar'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="487, 597, 70, 36" CvTextArea="502, 607, 42, 14" CvTextArgument="Enviar" CvType="Button" DesignTimeRectangle="489, 598, 67, 34" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='BUTTON' class='btn btn-primary' aaname='Enviar' check:innerText='Enviar' /&gt;" Guid="b4683965-c8d0-4dd5-8fb3-dbfd651a6238" InformativeScreenshot="95b59a128982b56710ab45de4a853c73.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PagCNT\\ValidacionPasoCaptcha.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PagCNT\\ValidacionPasoCaptcha.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validación">
@@ -306,23 +299,49 @@
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <If DisplayName="If validacion captcha" sap:VirtualizedContainerService.HintSize="682,262" sap2010:WorkflowViewState.IdRef="If_3">
+    <If DisplayName="If validacion captcha" sap:VirtualizedContainerService.HintSize="682,522" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Contador &gt; 3</CSharpValue>
         </InArgument>
       </If.Condition>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign validacio paso captcha reintentos" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">out_ResultadoPasoCaptcha</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14" />
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign validacio no paso captcha reintentos" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">out_ResultadoPasoCaptcha</CSharpReference>
+              </OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
       </If.Else>
     </If>
   </Sequence>

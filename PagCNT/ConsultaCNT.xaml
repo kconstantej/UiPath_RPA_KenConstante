@@ -120,6 +120,8 @@
   <Sequence DisplayName="ConsultaCNT" sap:VirtualizedContainerService.HintSize="1112,1788" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ImagenCaptcha" />
+      <Variable x:TypeArguments="x:Boolean" Name="ResultadoPasoCaptcha" />
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Res" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -153,9 +155,6 @@
             <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1164" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears Existe criterios busqueda" sap:VirtualizedContainerService.HintSize="450,947" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Res" />
-                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,12 +245,16 @@
                       <InArgument x:TypeArguments="x:String" x:Key="in_UrlCNT">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_UrlCNT</CSharpValue>
                       </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ResultadoPasoCaptcha">
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">ResultadoPasoCaptcha</CSharpReference>
+                      </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box In" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_1">
                     <ui:MessageBox.Text>
                       <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">Res</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">ResultadoPasoCaptcha</CSharpValue>
                       </InArgument>
                     </ui:MessageBox.Text>
                   </ui:MessageBox>
