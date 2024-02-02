@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ResolucionCapcha" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ResolucionCapcha" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_UrlCNT" Type="InArgument(x:String)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
     <x:Property Name="out_ResultadoPasoCaptcha" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>764,2690</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>764,2909</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,31 +104,43 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ResolucionCapcha" sap:VirtualizedContainerService.HintSize="744,2625" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ResolucionCapcha" sap:VirtualizedContainerService.HintSize="744,2844" sap2010:WorkflowViewState.IdRef="Sequence_20">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ImagenCaptcha" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="DiccionarioImagenes" />
       <Variable x:TypeArguments="x:Int32" Name="Contador" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Imagenes" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign diccionario contador" sap:VirtualizedContainerService.HintSize="682,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-      <ui:MultipleAssign.AssignOperations>
-        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">
-                <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">DiccionarioImagenes</CSharpReference>
-              </OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">
-                <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29" xml:space="preserve">new Dictionary&lt;string, string&gt; { 
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="682,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="541,258" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign diccionario contador" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">
+                      <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">DiccionarioImagenes</CSharpReference>
+                    </OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">
+                      <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30" xml:space="preserve">new Dictionary&lt;string, string&gt; { 
 	{ "casa", "01.png" }, 
 	{ "pilas", "49.png" },
 	{ "dados", "23.png" }, 
@@ -148,29 +160,45 @@
 	{ "candado", "77.png" },
 	{"nota musical", "40.png" },
 }</CSharpValue>
-              </InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:Int32">
-                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">Contador</CSharpReference>
-              </OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:Int32">1</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-        </scg:List>
-      </ui:MultipleAssign.AssignOperations>
-    </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="682,1765" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V2" WindowResize="Maximize">
+                    </InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:Int32">
+                      <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">Contador</CSharpReference>
+                    </OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="682,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Nombre&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Path&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;casa&lt;/Nombre&gt;&#xA;    &lt;Path&gt;01.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;pilas&lt;/Nombre&gt;&#xA;    &lt;Path&gt;49.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;dados&lt;/Nombre&gt;&#xA;    &lt;Path&gt;23.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;camara web&lt;/Nombre&gt;&#xA;    &lt;Path&gt;64.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;insecto&lt;/Nombre&gt;&#xA;    &lt;Path&gt;16.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;diskette&lt;/Nombre&gt;&#xA;    &lt;Path&gt;58.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;calculadora&lt;/Nombre&gt;&#xA;    &lt;Path&gt;12.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;esfero&lt;/Nombre&gt;&#xA;    &lt;Path&gt;19.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;estrella&lt;/Nombre&gt;&#xA;    &lt;Path&gt;32.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;reloj&lt;/Nombre&gt;&#xA;    &lt;Path&gt;15.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;mundo&lt;/Nombre&gt;&#xA;    &lt;Path&gt;99.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;llave&lt;/Nombre&gt;&#xA;    &lt;Path&gt;04.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;corazon&lt;/Nombre&gt;&#xA;    &lt;Path&gt;43.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;bandera&lt;/Nombre&gt;&#xA;    &lt;Path&gt;06.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;foco&lt;/Nombre&gt;&#xA;    &lt;Path&gt;21.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;celular&lt;/Nombre&gt;&#xA;    &lt;Path&gt;49.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;candado&lt;/Nombre&gt;&#xA;    &lt;Path&gt;77.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Nombre&gt;nota musical&lt;/Nombre&gt;&#xA;    &lt;Path&gt;40.png&lt;/Path&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable.DataTable>
+        <OutArgument x:TypeArguments="sd:DataTable">
+          <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">dt_Imagenes</CSharpReference>
+        </OutArgument>
+      </ui:BuildDataTable.DataTable>
+    </ui:BuildDataTable>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="682,1979" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do CNT" sap:VirtualizedContainerService.HintSize="648,1548" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do CNT" sap:VirtualizedContainerService.HintSize="648,1762" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="Validacion" />
             </Sequence.Variables>
@@ -179,15 +207,18 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While reintentos captcha" sap:VirtualizedContainerService.HintSize="586,1433" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While reintentos captcha" sap:VirtualizedContainerService.HintSize="586,1647" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
               <ui:InterruptibleWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1297" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1511" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="Src" />
+                  </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NGetText DisplayName="Get Text 'Selecciona la'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
+                  <uix:NGetText DisplayName="Get Text 'Selecciona la'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvTextArea="244, 529, 49, 13" CvType="AnyWordGroup" DesignTimeRectangle="246, 528, 47, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='captchaText' /&gt;" Guid="1cece9ff-6163-432a-9768-13dcb0445b4d" InformativeScreenshot="88121101bfee3179d2dce3e50b76cad7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2">
                         <uix:TargetAnchorable.Anchors>
@@ -199,11 +230,61 @@
                     </uix:NGetText.Target>
                     <uix:NGetText.TextString>
                       <OutArgument x:TypeArguments="x:String">
-                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">ImagenCaptcha</CSharpReference>
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">ImagenCaptcha</CSharpReference>
                       </OutArgument>
                     </uix:NGetText.TextString>
                   </uix:NGetText>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510,52" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="317, 563, 41, 40" CvType="Icon" DesignTimeRectangle="320, 566, 36, 36" DesignTimeScaleFactor="1" ElementType="Icon" Guid="2968f64f-9f78-4355-b807-267a4cd7ac5b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVFhH1ZVrSFNhHMb7GlgRRQQSJUTgpz4IQdlF+hRdpDJJE02FhCIqSzPnyMRUCo2RoVRaTlOjJMPRIi+QTjeZG06FRupMbIpMGaEW6wJP/l82p2fH5N3O6PjAj/ds5/yf8+NctjWQeVaPYMTjCFnhyeoT/N/xS9DhtOPFu7soepaE/KdxAUEd1EWdYuEWNFmbkVEWiUpTEhpsV/HmS3pAUAd1ZZRHwvTpg/ss3nALFtenQtUaiyf6VJR3pKCsPTkgqIO6qPN+XbL7LN5wC6YW7UJp2zk8bPXlnuYUstUHlyXv1RHROYI6Uwp2us/iDbdgYv4OlLyPFeVCcTiaDdVoNzf40GasR7oqSnTOA3ULwy2YkLcNRW+jRaF9/wp7KUTmPIjNcwvG54ayWyUG7XP9/O4+cml+//mF3PIY5L0WnyVoXhhuwbPKrVBUH/JBWRuFm1V7kFgQiqRCX+j7S6XhuP3ysOg8Qd3CcAvGKrYgo2KvKFlV+5BTux/KugM+5MyTXROJzErxWYK6heEWPJ21CZdLdwcF6haGW/Bk5kaklYQHBeoWhlsw+sZ6nC8MCwrULQy34PH0EMTfCQ0K1C0Mt2CCMgwx2ZtxRiEt1Bmv2O4+izfcgqq6izhxfd3887JBUqiTuoXhFnQ4v6K4Jg1xt0Jx7FoIjl5ZGxDUQV3USd3CcAtS5n58g+XzR+h6G5f83z56ngtth3qBmsYHSz57UFXkLMxQB3VRp1j8ElwunZ2d6O/vZzidTvT19bF1MXSMXq93T6wcSQVnZmZgsVigVqsxNzfHtqenpxfo7u5mci6Xyz2xciQX1Gq1mJycxOzsLHp7e+FwOBg6nY7rynkiqSDdvrGxMXb1SNJsNrOV0Gg0XFfOE8kFSWpkZAQTExNsm1aipaXFfRRfJBe02WyYmpqC3W5HT08PWwnZCBqNRgwODrJbTdu0ErK6gvTMjY6OsreWVkI2giRltVrZc2gwGNhKyEZweHgY4+PjbO3q6mIrIRtBkhoYGMDQ0BDbptVkMrF9/kRyQc8LQmL0w0xvclNTE/sR9yeSCwqhfxZ/5SiSCpIIvcWLCUSOsqKgXPBk9QjKNTIXBP4C7OMOoy56xfYAAAAASUVORK5CYII=" InformativeScreenshot="863a8ca2aaf22f3d77d9297eeb087279.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="244, 488, 452, 14" CvTextArgument="Selecciona la imagen que se indica en el texto en rojo a continuacion:" CvType="Text" DesignTimeRectangle="246, 486, 450, 19" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='FONT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='FONT' class='' aaname='Selecciona la imagen que se indica en el texto en rojo a continuación:' check:innerText='Selecciona la imagen que se indica en el texto en rojo a continuación:' /&gt;" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                              <uix:TargetAnchorable.FullSelectorArgument>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
+                                </InArgument>
+                              </uix:TargetAnchorable.FullSelectorArgument>
+                              <uix:TargetAnchorable.FuzzySelectorArgument>
+                                <InArgument x:TypeArguments="x:String">
+                                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
+                                </InArgument>
+                              </uix:TargetAnchorable.FuzzySelectorArgument>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <Assign DisplayName="Assign Src" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">Src</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">dt_Imagenes.Select("[Nombre] = '" + ImagenCaptcha+ "'")[0][1].ToString()</CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'IMG'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="317, 563, 41, 40" CvType="Icon" DesignTimeRectangle="320, 566, 36, 36" DesignTimeScaleFactor="1" ElementType="Icon" Guid="2968f64f-9f78-4355-b807-267a4cd7ac5b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM8SURBVFhH1ZVrSFNhHMb7GlgRRQQSJUTgpz4IQdlF+hRdpDJJE02FhCIqSzPnyMRUCo2RoVRaTlOjJMPRIi+QTjeZG06FRupMbIpMGaEW6wJP/l82p2fH5N3O6PjAj/ds5/yf8+NctjWQeVaPYMTjCFnhyeoT/N/xS9DhtOPFu7soepaE/KdxAUEd1EWdYuEWNFmbkVEWiUpTEhpsV/HmS3pAUAd1ZZRHwvTpg/ss3nALFtenQtUaiyf6VJR3pKCsPTkgqIO6qPN+XbL7LN5wC6YW7UJp2zk8bPXlnuYUstUHlyXv1RHROYI6Uwp2us/iDbdgYv4OlLyPFeVCcTiaDdVoNzf40GasR7oqSnTOA3ULwy2YkLcNRW+jRaF9/wp7KUTmPIjNcwvG54ayWyUG7XP9/O4+cml+//mF3PIY5L0WnyVoXhhuwbPKrVBUH/JBWRuFm1V7kFgQiqRCX+j7S6XhuP3ysOg8Qd3CcAvGKrYgo2KvKFlV+5BTux/KugM+5MyTXROJzErxWYK6heEWPJ21CZdLdwcF6haGW/Bk5kaklYQHBeoWhlsw+sZ6nC8MCwrULQy34PH0EMTfCQ0K1C0Mt2CCMgwx2ZtxRiEt1Bmv2O4+izfcgqq6izhxfd3887JBUqiTuoXhFnQ4v6K4Jg1xt0Jx7FoIjl5ZGxDUQV3USd3CcAtS5n58g+XzR+h6G5f83z56ngtth3qBmsYHSz57UFXkLMxQB3VRp1j8ElwunZ2d6O/vZzidTvT19bF1MXSMXq93T6wcSQVnZmZgsVigVqsxNzfHtqenpxfo7u5mci6Xyz2xciQX1Gq1mJycxOzsLHp7e+FwOBg6nY7rynkiqSDdvrGxMXb1SNJsNrOV0Gg0XFfOE8kFSWpkZAQTExNsm1aipaXFfRRfJBe02WyYmpqC3W5HT08PWwnZCBqNRgwODrJbTdu0ErK6gvTMjY6OsreWVkI2giRltVrZc2gwGNhKyEZweHgY4+PjbO3q6mIrIRtBkhoYGMDQ0BDbptVkMrF9/kRyQc8LQmL0w0xvclNTE/sR9yeSCwqhfxZ/5SiSCpIIvcWLCUSOsqKgXPBk9QjKNTIXBP4C7OMOoy56xfYAAAAASUVORK5CYII=" InformativeScreenshot="863a8ca2aaf22f3d77d9297eeb087279.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -213,61 +294,61 @@
                         </uix:TargetAnchorable.Anchors>
                         <uix:TargetAnchorable.FullSelectorArgument>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+Src+"' /&gt;"</CSharpValue>
                           </InArgument>
                         </uix:TargetAnchorable.FullSelectorArgument>
                         <uix:TargetAnchorable.FuzzySelectorArgument>
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+DiccionarioImagenes[ImagenCaptcha].ToString()+"' /&gt;"</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_35">"&lt;webctrl src='../../lib/simpleCaptcha0.2/captchaImages/"+Src+"' /&gt;"</CSharpValue>
                           </InArgument>
                         </uix:TargetAnchorable.FuzzySelectorArgument>
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enviar'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Enviar'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="eaacb376-f6a5-45d8-9ba5-b8c17208901c" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvElementArea="487, 597, 70, 36" CvTextArea="502, 607, 42, 14" CvTextArgument="Enviar" CvType="Button" DesignTimeRectangle="489, 598, 67, 34" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='BUTTON' class='btn btn-primary' aaname='Enviar' check:innerText='Enviar' /&gt;" Guid="b4683965-c8d0-4dd5-8fb3-dbfd651a6238" InformativeScreenshot="95b59a128982b56710ab45de4a853c73.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PagCNT\\ValidacionPasoCaptcha.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="PagCNT\\ValidacionPasoCaptcha.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PagCNT\\ValidacionPasoCaptcha.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="510,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="PagCNT\\ValidacionPasoCaptcha.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Validación">
-                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">Validacion</CSharpReference>
+                        <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">Validacion</CSharpReference>
                       </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <If DisplayName="If validacion" sap:VirtualizedContainerService.HintSize="510,465" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If DisplayName="If validacion" sap:VirtualizedContainerService.HintSize="510,465" sap2010:WorkflowViewState.IdRef="If_5">
                     <If.Condition>
                       <InArgument x:TypeArguments="x:Boolean">
-                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">Validacion==true</CSharpValue>
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_36">Validacion==true</CSharpValue>
                       </InArgument>
                     </If.Condition>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Break sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Break_2" />
+                        <ui:Break sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Break_3" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_26">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Int32">
-                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">Contador</CSharpReference>
+                              <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">Contador</CSharpReference>
                             </OutArgument>
                           </Assign.To>
                           <Assign.Value>
                             <InArgument x:TypeArguments="x:Int32">
-                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Contador+1</CSharpValue>
+                              <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_37">Contador+1</CSharpValue>
                             </InArgument>
                           </Assign.Value>
                         </Assign>
@@ -277,7 +358,7 @@
                 </Sequence>
               </ui:InterruptibleWhile.Body>
               <ui:InterruptibleWhile.Condition>
-                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Contador&lt;=3</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_38">Contador&lt;=3</CSharpValue>
               </ui:InterruptibleWhile.Condition>
             </ui:InterruptibleWhile>
           </Sequence>
@@ -287,29 +368,29 @@
         <uix:TargetApp Area="-656, -1058, 1696, 1018" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="71ef8fba7a8a35f3513714b523644a69.jpg" Selector="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" Title=":: Guía Telefónica CNT EP ::">
           <uix:TargetApp.Url>
             <InArgument x:TypeArguments="x:String">
-              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">in_UrlCNT</CSharpValue>
+              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">in_UrlCNT</CSharpValue>
             </InArgument>
           </uix:TargetApp.Url>
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <If DisplayName="If validacion captcha" sap:VirtualizedContainerService.HintSize="682,522" sap2010:WorkflowViewState.IdRef="If_3">
+    <If DisplayName="If validacion captcha" sap:VirtualizedContainerService.HintSize="682,522" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
-          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">Contador &gt; 3</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_40">Contador &gt; 3</CSharpValue>
         </InArgument>
       </If.Condition>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_27">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign validacio paso captcha reintentos" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="Assign validacio paso captcha reintentos" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">
-                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">out_ResultadoPasoCaptcha</CSharpReference>
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">out_ResultadoPasoCaptcha</CSharpReference>
               </OutArgument>
             </Assign.To>
             <Assign.Value>
@@ -319,16 +400,16 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign validacio no paso captcha reintentos" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign DisplayName="Assign validacio no paso captcha reintentos" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">
-                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">out_ResultadoPasoCaptcha</CSharpReference>
+                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">out_ResultadoPasoCaptcha</CSharpReference>
               </OutArgument>
             </Assign.To>
             <Assign.Value>
