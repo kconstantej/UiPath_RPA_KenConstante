@@ -3,9 +3,11 @@
     <x:Property Name="in_UrlCNT" Type="InArgument(x:String)" />
     <x:Property Name="in_Provincia" Type="InArgument(x:String)" />
     <x:Property Name="in_Apellidos" Type="InArgument(x:String)" />
+    <x:Property Name="out_dt_TablaDato" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_NumeroPaginas" Type="InArgument(x:Int32)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1102,2290</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1102,2164</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,12 +123,11 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ConsultaCNT" sap:VirtualizedContainerService.HintSize="1112,2225" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ConsultaCNT" sap:VirtualizedContainerService.HintSize="1112,2099" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ImagenCaptcha" />
       <Variable x:TypeArguments="x:Boolean" Name="ResultadoPasoCaptcha" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Res" />
-      <Variable x:TypeArguments="sd:DataTable" Name="TablaDatos" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -145,21 +146,21 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="1050,1931" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: :: Guía Telefónica CNT EP ::" sap:VirtualizedContainerService.HintSize="1050,1805" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do Ingreso CNT" sap:VirtualizedContainerService.HintSize="1016,1713" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do Ingreso CNT" sap:VirtualizedContainerService.HintSize="1016,1587" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1173" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1047" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears Existe criterios busqueda" sap:VirtualizedContainerService.HintSize="450,954" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Target appears Existe criterios busqueda" sap:VirtualizedContainerService.HintSize="450,828" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -256,13 +257,6 @@
                       </OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box In" sap:VirtualizedContainerService.HintSize="388,86" sap2010:WorkflowViewState.IdRef="MessageBox_1">
-                    <ui:MessageBox.Text>
-                      <InArgument x:TypeArguments="x:Object">
-                        <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">ResultadoPasoCaptcha</CSharpValue>
-                      </InArgument>
-                    </ui:MessageBox.Text>
-                  </ui:MessageBox>
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
@@ -303,8 +297,11 @@
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_UrlCNT</CSharpValue>
                       </InArgument>
                       <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TablaConsolidada">
-                        <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">TablaDatos</CSharpReference>
+                        <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">out_dt_TablaDato</CSharpReference>
                       </OutArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_NumeroPaginas">
+                        <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">in_NumeroPaginas</CSharpValue>
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
