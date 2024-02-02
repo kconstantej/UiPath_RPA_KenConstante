@@ -130,7 +130,7 @@
         </InArgument>
       </ui:FileExistsX.Path>
     </ui:FileExistsX>
-    <If sap:VirtualizedContainerService.HintSize="410,1016" sap2010:WorkflowViewState.IdRef="If_1">
+    <If DisplayName="If validacio archivo correcto" sap:VirtualizedContainerService.HintSize="410,1016" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">PathExist &amp;&amp; in_Error != true</CSharpValue>
@@ -147,7 +147,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Crd_Correo" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1">
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Crd_Correo" CacheStrategy="None" DisplayName="Get Credential 1" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1">
             <ui:GetRobotCredential.Password>
               <OutArgument x:TypeArguments="ss:SecureString">
                 <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">PasswordCorreoCorrecto</CSharpReference>
@@ -159,7 +159,7 @@
               </OutArgument>
             </ui:GetRobotCredential.Username>
           </ui:GetRobotCredential>
-          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DisplayName="Send SMTP Mail Message Documento" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com">
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DisplayName="Send SMTP Mail Message Documento 1" EnableSSL="True" sap:VirtualizedContainerService.HintSize="334,146" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="True" Port="587" SecureConnection="Auto" Server="smtp-mail.outlook.com">
             <ui:SendMail.Body>
               <InArgument x:TypeArguments="x:String">
                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">in_Body</CSharpValue>
@@ -206,7 +206,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Crd_Correo" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2">
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Crd_Correo" CacheStrategy="None" DisplayName="Get Credential 2" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2">
             <ui:GetRobotCredential.Password>
               <OutArgument x:TypeArguments="ss:SecureString">
                 <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">PasswordCorreo</CSharpReference>

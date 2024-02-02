@@ -111,7 +111,7 @@
       <Variable x:TypeArguments="s:Exception" Name="SystemError" />
       <Variable x:TypeArguments="x:String" Name="UrlCNT" />
       <Variable x:TypeArguments="x:String" Name="PathEscritorio" />
-      <Variable x:TypeArguments="sd:DataTable" Name="TablaDato" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_TablaDato" />
       <Variable x:TypeArguments="x:Int32" Name="NumeroPaginas" />
       <Variable x:TypeArguments="x:String" Name="PathArchivoFinal" />
       <Variable x:TypeArguments="x:String" Name="Body" />
@@ -134,11 +134,11 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID4" DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="580,2734" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID4" DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
-          <TryCatch DisplayName="Try Catch Inicio" sap:VirtualizedContainerService.HintSize="534,2319" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch Inicio" sap:VirtualizedContainerService.HintSize="534,2318" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <TryCatch.Try>
-              <Sequence DisplayName="Inicio Sequence" sap:VirtualizedContainerService.HintSize="496,2069" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Inicio Sequence" sap:VirtualizedContainerService.HintSize="496,2068" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -156,7 +156,7 @@
                     </InArgument>
                   </ui:LogMessage.Message>
                 </ui:LogMessage>
-                <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="Desktop">
+                <ui:GetEnvironmentFolder DisplayName="Get Environment Folder escritorio" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="Desktop">
                   <ui:GetEnvironmentFolder.FolderPath>
                     <OutArgument x:TypeArguments="x:String">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">PathEscritorio</CSharpReference>
@@ -208,7 +208,7 @@
                     </OutArgument>
                   </ui:InputDialog.Result>
                 </ui:InputDialog>
-                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Correo" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Ingrese Correo" Title="Datos de entrada">
+                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Correo" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Ingrese Correo" Title="Datos de entrada">
                   <ui:InputDialog.Result>
                     <OutArgument x:TypeArguments="x:String">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">Correo</CSharpReference>
@@ -235,14 +235,14 @@
                     </OutArgument>
                   </ui:GetRobotAsset.Value>
                 </ui:GetRobotAsset>
-                <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="NumeroPaginas" CacheStrategy="None" DisplayName="Get Asset URL CNT" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
+                <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="NumeroPaginas" CacheStrategy="None" DisplayName="Get Asset URL Numero de paginas" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_3">
                   <ui:GetRobotAsset.Value>
                     <OutArgument x:TypeArguments="x:Int32">
                       <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">NumeroPaginas</CSharpReference>
                     </OutArgument>
                   </ui:GetRobotAsset.Value>
                 </ui:GetRobotAsset>
-                <Assign DisplayName="Assign Path archivo final" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign DisplayName="Assign Path archivo final" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">
                       <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">PathArchivoFinal</CSharpReference>
@@ -268,14 +268,14 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Error de regla de negocio" sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Error de regla de negocio" sap:VirtualizedContainerService.HintSize="496,373" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="BusinessException" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign DisplayName="BusinessException" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="ui:BusinessRuleException">
                           <CSharpReference x:TypeArguments="ui:BusinessRuleException" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">BusinessError</CSharpReference>
@@ -313,13 +313,13 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Error sistema" sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Error sistema" sap:VirtualizedContainerService.HintSize="496,373" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="SystemException" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign DisplayName="SystemException" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
                       <Assign.To>
                         <OutArgument x:TypeArguments="s:Exception">
                           <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">SystemError</CSharpReference>
@@ -371,7 +371,7 @@
             <Transition.To>
               <State x:Name="__ReferenceID1" DisplayName="Extraer Informacion" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_3">
                 <State.Entry>
-                  <TryCatch DisplayName="Try Catch extraer Informacion" sap:VirtualizedContainerService.HintSize="488,655" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                  <TryCatch DisplayName="Try Catch extraer Informacion" sap:VirtualizedContainerService.HintSize="536,628" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -386,7 +386,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message extraer datos" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_7">
+                        <ui:LogMessage DisplayName="Log Message extraer datos 1" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_7">
                           <ui:LogMessage.Level>
                             <InArgument x:TypeArguments="ui:LogLevel">
                               <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -413,7 +413,7 @@
                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_65">Apellido</CSharpValue>
                             </InArgument>
                             <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TablaDato">
-                              <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">TablaDato</CSharpReference>
+                              <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">dt_TablaDato</CSharpReference>
                             </OutArgument>
                             <InArgument x:TypeArguments="x:Int32" x:Key="in_NumeroPaginas">
                               <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">NumeroPaginas</CSharpValue>
@@ -423,7 +423,7 @@
                       </Sequence>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                      <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="502,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -434,7 +434,7 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Error regla negocio extraer informacion" sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence DisplayName="Error regla negocio extraer informacion1 " sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -452,7 +452,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:LogMessage DisplayName="Log Message Business Error Extraer informaicon" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_6">
+                            <ui:LogMessage DisplayName="Log Message Business Error Extraer informaicon 1" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_6">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -467,10 +467,10 @@
                           </Sequence>
                         </ActivityAction>
                       </Catch>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,443" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -478,13 +478,13 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Error sistema extraer informacion" sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Error sistema en extraer informacion 1" sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="SystemException extraer informacion" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <Assign DisplayName="SystemException en extraer informacion 1" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:Exception">
                                   <CSharpReference x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">SystemError</CSharpReference>
@@ -496,7 +496,7 @@
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:LogMessage DisplayName="Log Message System Error 1" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+                            <ui:LogMessage DisplayName="Log Message en System Error 1" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_4">
                               <ui:LogMessage.Level>
                                 <InArgument x:TypeArguments="ui:LogLevel">
                                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">UiPath.Core.Activities.LogLevel.Fatal</CSharpValue>
@@ -537,7 +537,7 @@
                       <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">SystemError == null &amp;&amp; BusinessError == null</CSharpValue>
                     </Transition.Condition>
                     <Transition.To>
-                      <State x:Name="__ReferenceID2" DisplayName="Procesar Informacion" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_4">
+                      <State x:Name="__ReferenceID2" DisplayName="StateProcesar Informacion" sap:VirtualizedContainerService.HintSize="534,1070" sap2010:WorkflowViewState.IdRef="State_4">
                         <State.Entry>
                           <TryCatch DisplayName="Try Catch Procesar Informacion" sap:VirtualizedContainerService.HintSize="488,655" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                             <sap:WorkflowViewStateService.ViewState>
@@ -569,7 +569,7 @@
                                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MAIN\\ProcesarTabla.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="MAIN\\ProcesarTabla.xaml">
                                   <ui:InvokeWorkflowFile.Arguments>
                                     <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_dt_TablaDatos">
-                                      <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">TablaDato</CSharpReference>
+                                      <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">dt_TablaDato</CSharpReference>
                                     </InOutArgument>
                                   </ui:InvokeWorkflowFile.Arguments>
                                 </ui:InvokeWorkflowFile>
@@ -689,7 +689,7 @@
                             <Transition.To>
                               <State x:Name="__ReferenceID0" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
                                 <State.Entry>
-                                  <TryCatch DisplayName="Try Catch Fin" sap:VirtualizedContainerService.HintSize="655,1418" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                  <TryCatch DisplayName="Try Catch Fin" sap:VirtualizedContainerService.HintSize="434,373" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                     <TryCatch.Try>
                                       <Sequence DisplayName="Sequence fin" sap:VirtualizedContainerService.HintSize="617,1190" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -709,7 +709,7 @@
                                             </InArgument>
                                           </ui:LogMessage.Message>
                                         </ui:LogMessage>
-                                        <If sap:VirtualizedContainerService.HintSize="555,745" sap2010:WorkflowViewState.IdRef="If_1">
+                                        <If DisplayName="If error system y bussines" sap:VirtualizedContainerService.HintSize="555,745" sap2010:WorkflowViewState.IdRef="If_1">
                                           <If.Condition>
                                             <InArgument x:TypeArguments="x:Boolean">
                                               <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">SystemError == null &amp;&amp; BusinessError == null</CSharpValue>
@@ -722,7 +722,7 @@
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:MultipleAssign DisplayName="Multiple Assign variables de correo" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                              <ui:MultipleAssign DisplayName="Multiple Assign variables de correo sin errores" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                                                 <ui:MultipleAssign.AssignOperations>
                                                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -738,7 +738,7 @@
 "&lt;tr&gt;"+"&lt;td&gt;&lt;img height='180px' width='650px' src='https://github.com/davidctdavid/Cumplea-osVP/blob/main/bannerCorreo.png?raw=true'/&gt;&lt;/td&gt;"+
 "&lt;/tr&gt;"+"&lt;tr&gt;"+"&lt;td&gt;"+"&lt;br&gt;"+"&lt;p style='padding-left: 30px; color: #223357; text-align:left; font-size: 22px;'&gt;Estimados,&lt;/p&gt;"+"&lt;P style='padding-left: 30px; color: #223357; text-align:left; font-size: 22px;'&gt;"+
 "Se ha ejecutado el RPA de Consultas CNT."+"&lt;br&gt;"+"&lt;br&gt;"+
-"Adjunto encontrará el documento, y el Total de contactos encontrados es de "+TablaDato.RowCount().ToString()+"."+
+"Adjunto encontrará el documento, y el Total de contactos encontrados es de "+dt_TablaDato.RowCount().ToString()+"."+
  "&lt;/P&gt;"+"&lt;p style='padding-left: 30px; color: #223357; text-align:left; font-size: 22px;'&gt;Atentamente, &lt;br&gt;Ken Constante&lt;/p&gt;"+
  "&lt;br&gt;"+"&lt;/td&gt;"+"&lt;/tr&gt;"+"&lt;/table&gt;"+"&lt;/center&gt;"</CSharpValue>
                                                         </InArgument>
@@ -856,10 +856,10 @@
                                       </Sequence>
                                     </TryCatch.Try>
                                     <TryCatch.Catches>
-                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="621,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -867,7 +867,7 @@
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                           </ActivityAction.Argument>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_16">
+                                          <ui:LogMessage DisplayName="Log Message state final" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_16">
                                             <ui:LogMessage.Level>
                                               <InArgument x:TypeArguments="ui:LogLevel">
                                                 <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -952,7 +952,7 @@
                               <CSharpValue x:TypeArguments="x:Boolean" DisplayName="C sharp value" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">SystemError == null &amp;&amp; BusinessError == null</CSharpValue>
                             </Transition.Condition>
                             <Transition.To>
-                              <State x:Name="__ReferenceID3" DisplayName="Crear Archivo" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_5">
+                              <State x:Name="__ReferenceID3" DisplayName="Crear Archivo" sap:VirtualizedContainerService.HintSize="534,1070" sap2010:WorkflowViewState.IdRef="State_5">
                                 <State.Entry>
                                   <TryCatch DisplayName="Try Catch Crear Archivo" sap:VirtualizedContainerService.HintSize="488,655" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -962,7 +962,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <TryCatch.Try>
-                                      <Sequence DisplayName="Crear Archivo" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                      <Sequence DisplayName="state Crear Archivo" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -984,7 +984,7 @@
                                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CrearArchivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Excel\\CrearArchivo.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_DataTable">
-                                              <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">TablaDato</CSharpValue>
+                                              <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">dt_TablaDato</CSharpValue>
                                             </InArgument>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_PathArchivoFinal">
                                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_59">PathArchivoFinal</CSharpValue>

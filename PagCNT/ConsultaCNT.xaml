@@ -126,9 +126,7 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="ConsultaCNT" sap:VirtualizedContainerService.HintSize="1112,2266" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="ImagenCaptcha" />
       <Variable x:TypeArguments="x:Boolean" Name="ResultadoPasoCaptcha" />
-      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Res" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -252,7 +250,6 @@
                       <InArgument x:TypeArguments="x:String" x:Key="in_UrlCNT">
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">in_UrlCNT</CSharpValue>
                       </InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ResultadoPasoCaptcha">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">ResultadoPasoCaptcha</CSharpReference>
                       </OutArgument>
@@ -284,7 +281,7 @@
                 </uix:TargetAnchorable>
               </uix:NCheckState.Target>
             </uix:NCheckState>
-            <If sap:VirtualizedContainerService.HintSize="954,561" sap2010:WorkflowViewState.IdRef="If_2">
+            <If DisplayName="If paso captcha" sap:VirtualizedContainerService.HintSize="954,561" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">ResultadoPasoCaptcha==true</CSharpValue>
