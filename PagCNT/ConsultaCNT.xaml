@@ -157,7 +157,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1041" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Criterio de Búsqueda'" sap:VirtualizedContainerService.HintSize="954,1041" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e4686e0c-c6f0-4fd8-976c-c96563054456" Timeout="15" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears Existe criterios busqueda" sap:VirtualizedContainerService.HintSize="450,824" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -175,10 +175,10 @@
                       </scg:List>
                     </uix:NSelectItem.Items>
                     <uix:NSelectItem.Target>
-                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvTextArea="302, 341, 81, 14" CvTextArgument="Por Nombre" CvType="Text" DesignTimeRectangle="286, 331, 290, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' type='' class='form-control' aaname='' /&gt;" Guid="0344176e-2442-4f99-81fd-f8cccfd9ec3d" InformativeScreenshot="77a4cc799c00e0e994135bfa0219d94b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?paginas=2&amp;cmbprov2=9&amp;cmbcriterio=3&amp;txtusuarioapellido=CORTES&amp;txtusuarionombre=&amp;hflagsubmit=1" CvElementArea="285, 330, 292, 36" CvType="InputBox" DesignTimeRectangle="286, 331, 290, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl tag='SELECT' name='cmbcriterio' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SELECT' name='cmbcriterio' type='' class='form-control' aaname='' /&gt;" Guid="5280bdc7-3268-48c6-aa2b-5ac9ffb98059" InformativeScreenshot="26109ce64454b145ffeeae00768d2dcb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CvTextArea="284, 308, 148, 17" CvTextArgument="Criterio de Busqueda" CvType="Text" DesignTimeRectangle="286, 306, 147, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Criterio de Búsqueda' check:innerText='Criterio de Búsqueda' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="284, 308, 148, 17" CvTextArgument="Criterio de Busqueda" CvType="Text" DesignTimeRectangle="286, 306, 146, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Criterio de Búsqueda' check:innerText='Criterio de Búsqueda' /&gt;" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
@@ -220,10 +220,10 @@
                       </scg:List>
                     </uix:NSelectItem.Items>
                     <uix:NSelectItem.Target>
-                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?hflagsubmit=0&amp;cmbcriterio=3&amp;cmbprov2=17&amp;txtusuarioapellido=&amp;txtusuarionombre=&amp;captchaSelection=" CvTextArea="302, 463, 75, 13" CvTextArgument="PICHINCHA" CvType="Text" DesignTimeRectangle="286, 452, 290, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SELECT' class='form-control' aaname='' /&gt;" Guid="d91ba192-8037-4e04-856f-6a8754969e62" InformativeScreenshot="e4d5e36c1f3465c79357a3ba2e95d8f8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable BrowserURL="https://micnt.com.ec/cntapp/guia104/php/guia_cntat.php?paginas=2&amp;cmbprov2=9&amp;cmbcriterio=3&amp;txtusuarioapellido=CORTES&amp;txtusuarionombre=&amp;hflagsubmit=1" CvElementArea="285, 451, 292, 36" CvType="InputBox" DesignTimeRectangle="286, 452, 290, 34" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='SELECT' name='cmbprov2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='SELECT' name='cmbprov2' class='form-control' aaname='' /&gt;" Guid="12cf205d-396f-4993-8ebe-fbe2ddcaabc0" InformativeScreenshot="45f809c3649f3b7dadd38401eae08ca1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title=':: Guía Telefónica CNT EP ::' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                            <uix:Target CvTextArea="284, 429, 71, 14" CvTextArgument="Provincia:" CvType="Text" DesignTimeRectangle="286, 427, 73, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='lselect' aaname='Provincia: ' check:innerText='Provincia:' /&gt;" SearchSteps="FuzzySelector, CV" />
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target CvTextArea="284, 429, 71, 14" CvTextArgument="Provincia:" CvType="Text" DesignTimeRectangle="286, 427, 72, 20" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='lselect' aaname='Provincia: ' check:innerText='Provincia:' /&gt;" SearchSteps="FuzzySelector, CV" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
@@ -253,6 +253,7 @@
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ResultadoPasoCaptcha">
                         <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">ResultadoPasoCaptcha</CSharpReference>
                       </OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_BreakTriggerScopeInArgument" />
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
