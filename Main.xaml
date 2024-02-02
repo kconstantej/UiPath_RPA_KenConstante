@@ -104,18 +104,10 @@
   <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="733,799" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:BusinessRuleException" Name="BusinessError" />
-      <Variable x:TypeArguments="x:String" Name="Apellido">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">Castro</Literal>
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:String" Default="PICHINCHA" Name="Provincia" />
+      <Variable x:TypeArguments="x:String" Name="Apellido" />
+      <Variable x:TypeArguments="x:String" Name="Provincia" />
       <Variable x:TypeArguments="s:DateTime" Name="HoraInicio" />
-      <Variable x:TypeArguments="x:String" Name="Correo">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">keencons@hotmail.com</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Name="Correo" />
       <Variable x:TypeArguments="s:Exception" Name="SystemError" />
       <Variable x:TypeArguments="x:String" Name="UrlCNT" />
       <Variable x:TypeArguments="x:String" Name="PathEscritorio" />
@@ -142,11 +134,11 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <State x:Name="__ReferenceID4" DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_1">
+      <State x:Name="__ReferenceID4" DisplayName="Inicio" sap:VirtualizedContainerService.HintSize="580,2734" sap2010:WorkflowViewState.IdRef="State_1">
         <State.Entry>
-          <TryCatch DisplayName="Try Catch Inicio" sap:VirtualizedContainerService.HintSize="534,1329" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch Inicio" sap:VirtualizedContainerService.HintSize="534,2319" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <TryCatch.Try>
-              <Sequence DisplayName="Inicio Sequence" sap:VirtualizedContainerService.HintSize="496,1079" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Inicio Sequence" sap:VirtualizedContainerService.HintSize="496,2069" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -185,7 +177,7 @@
                 </Assign>
                 <ui:CommentOut DisplayName="NO BORRAR" sap:VirtualizedContainerService.HintSize="434,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,1254" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,417" sap2010:WorkflowViewState.IdRef="Sequence_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -193,27 +185,6 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process Chrome" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="chrome" />
                       <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process Excel" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="KillProcess_3" ProcessName="excel" />
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Apellido " sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Ingrese el Apellido" Title="Datos de entrada">
-                        <ui:InputDialog.Result>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">Apellido</CSharpReference>
-                          </OutArgument>
-                        </ui:InputDialog.Result>
-                      </ui:InputDialog>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Provincia" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Ingrese la Provincia" Title="Datos de entrada">
-                        <ui:InputDialog.Result>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">Provincia</CSharpReference>
-                          </OutArgument>
-                        </ui:InputDialog.Result>
-                      </ui:InputDialog>
-                      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Correo" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Ingrese Correo" Title="Datos de entrada">
-                        <ui:InputDialog.Result>
-                          <OutArgument x:TypeArguments="x:String">
-                            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">Correo</CSharpReference>
-                          </OutArgument>
-                        </ui:InputDialog.Result>
-                      </ui:InputDialog>
                     </Sequence>
                   </ui:CommentOut.Body>
                   <sap:WorkflowViewStateService.ViewState>
@@ -223,6 +194,40 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
+                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Apellido " sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Ingrese el Apellido" Title="Datos de entrada">
+                  <ui:InputDialog.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">Apellido</CSharpReference>
+                    </OutArgument>
+                  </ui:InputDialog.Result>
+                </ui:InputDialog>
+                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Provincia" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Ingrese la Provincia" Title="Datos de entrada">
+                  <ui:InputDialog.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">Provincia</CSharpReference>
+                    </OutArgument>
+                  </ui:InputDialog.Result>
+                </ui:InputDialog>
+                <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog Correo" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="Ingrese Correo" Title="Datos de entrada">
+                  <ui:InputDialog.Result>
+                    <OutArgument x:TypeArguments="x:String">
+                      <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">Correo</CSharpReference>
+                    </OutArgument>
+                  </ui:InputDialog.Result>
+                </ui:InputDialog>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="MAIN\\ValidarCamposEntrada.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="MAIN\\ValidarCamposEntrada.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Apellido">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">Apellido</CSharpValue>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Provincia">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_101">Provincia</CSharpValue>
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_Correo">
+                      <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">Correo</CSharpValue>
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
                 <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="UrlCNT" CacheStrategy="None" DisplayName="Get Asset URL CNT" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
                   <ui:GetRobotAsset.Value>
                     <OutArgument x:TypeArguments="x:String">
@@ -682,7 +687,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <Transition.To>
-                              <State x:Name="__ReferenceID0" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="701,1532" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
+                              <State x:Name="__ReferenceID0" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
                                 <State.Entry>
                                   <TryCatch DisplayName="Try Catch Fin" sap:VirtualizedContainerService.HintSize="655,1418" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                     <TryCatch.Try>

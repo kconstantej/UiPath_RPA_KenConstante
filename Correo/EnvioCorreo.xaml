@@ -139,8 +139,8 @@
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="376,417" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
-            <Variable x:TypeArguments="x:String" Name="UsuarioCorreo" />
-            <Variable x:TypeArguments="ss:SecureString" Name="PasswordCorreo" />
+            <Variable x:TypeArguments="x:String" Name="UsuarioCorreoCorrecto" />
+            <Variable x:TypeArguments="ss:SecureString" Name="PasswordCorreoCorrecto" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -150,12 +150,12 @@
           <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Crd_Correo" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Shared" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1">
             <ui:GetRobotCredential.Password>
               <OutArgument x:TypeArguments="ss:SecureString">
-                <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">PasswordCorreo</CSharpReference>
+                <CSharpReference x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">PasswordCorreoCorrecto</CSharpReference>
               </OutArgument>
             </ui:GetRobotCredential.Password>
             <ui:GetRobotCredential.Username>
               <OutArgument x:TypeArguments="x:String">
-                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">UsuarioCorreo</CSharpReference>
+                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">UsuarioCorreoCorrecto</CSharpReference>
               </OutArgument>
             </ui:GetRobotCredential.Username>
           </ui:GetRobotCredential>
@@ -167,7 +167,7 @@
             </ui:SendMail.Body>
             <ui:SendMail.Email>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UsuarioCorreo</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UsuarioCorreoCorrecto</CSharpValue>
               </InArgument>
             </ui:SendMail.Email>
             <ui:SendMail.Files>
@@ -179,7 +179,7 @@
             </ui:SendMail.Files>
             <ui:SendMail.SecurePassword>
               <InArgument x:TypeArguments="ss:SecureString">
-                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">PasswordCorreo</CSharpValue>
+                <CSharpValue x:TypeArguments="ss:SecureString" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">PasswordCorreoCorrecto</CSharpValue>
               </InArgument>
             </ui:SendMail.SecurePassword>
             <ui:SendMail.Subject>
